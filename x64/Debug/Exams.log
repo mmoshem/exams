@@ -1,4 +1,2 @@
-﻿  Source.c
-C:\Users\lolilolo\Desktop\vs hit\exams\Exams\Exams\Source.c(125,10): warning C4133: '=': incompatible types - from 'PtrItem *' to 'DataItem *'
-C:\Users\lolilolo\Desktop\vs hit\exams\Exams\Exams\Source.c(115,12): warning C4133: 'initializing': incompatible types - from 'PtrItem *' to 'DataItem *'
+﻿  q2_2018_s_a.c
   Exams.vcxproj -> C:\Users\lolilolo\Desktop\vs hit\exams\Exams\x64\Debug\Exams.exe

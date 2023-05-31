@@ -76,18 +76,22 @@ DataItem* tutrnToSimpleList(PtrItem* l){
 	DataItem* newcurr= NULL;
 
 	if (l == NULL) { return NULL; }
+
+
 	DataItem* curr = NULL;
 	while (l != NULL) {
 		curr = l->ptr;
 		while (curr != NULL) {
 			if (head == NULL) {
-				newcurr = head = createElement(curr->data);
+				newcurr = head = createElement(curr->data);        
 			}
+			
 			else{
 				newcurr->next = createElement(curr->data);
 				newcurr = newcurr->next;
 			}
 			curr = curr->next;
+		
 		}
 		l = l->next;
 	}
