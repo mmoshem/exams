@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="q2_2018_b_b.c" />
-    <ClCompile Include="q2_2018_s_a.c" />
+    <ClCompile Include="q2_19_b_b.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
