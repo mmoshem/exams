@@ -22,23 +22,30 @@ void printsiplelist(DataItem* head) {
 
 
 DataItem* makeOneLongList(PtrItem* l) {
-	
+
 	DataItem* head = l->ptr;
 	DataItem* curr = head;
-
+	PtrItem* a = l;
+	PtrItem* b = NULL;
+	l = l->next;
 	while (l != NULL) {
-		while (curr != NULL) {
-			if (curr->next == NULL) {
-				l = l->next;
-				curr->next = l->ptr;
-			}
-			else {
-				curr = curr->next;
-			}
+
+		while (curr->next != NULL) {
+			curr = curr->next;
 		}
-		l->ptr;
+		curr->next = l->ptr;
+		l = l->next;
+
 	}
+	while (a != NULL) {
+		b = a;
+		a = a->next;
+		free(b);
+	}
+
+
 	return head;
+
 }
 
 
