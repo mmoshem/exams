@@ -49,7 +49,13 @@ void addToListFromArrLexi(Item **list, char* arr[], int size) {
 		}
 		while (pos != NULL) {
 			
-			if (strcmp(arr[i],pos->string) > 0) {
+			if (strcmp(arr[i],prev->string) > 0) {
+				if (pos != NULL && strcmp(arr[i], pos->string) < 0) {
+					Item* temp = createNode(arr[i]);
+					temp->next = pos;
+					prev->next = temp;
+					break;
+				}
 				prev = pos;
 				pos = pos->next;
 			}
@@ -59,7 +65,7 @@ void addToListFromArrLexi(Item **list, char* arr[], int size) {
 				if (prev == *list) {
 					temp->next = prev;
 					*list = temp;
-					
+					break;
 				}
 				else {
 					temp->next = pos;
@@ -67,20 +73,20 @@ void addToListFromArrLexi(Item **list, char* arr[], int size) {
 					
 				}
 			}
-			if (pos==NULL) {
-				Item* temp = createNode(arr[i]);
-				temp->next = pos;
-				prev->next = temp;
-				break;
-			}
 
+		}
+		if (pos==NULL) {
+			Item* temp = createNode(arr[i]);
+			                    
+			prev->next = temp;
+			continue;
 		}
 	}
 }
 
 int main() {
 
-	char* arr[] = { "Mike","Avi","Irit","Arthur" };
+	char* arr[] = { "Mike","Jacob","Kim","Maia","Willi","Barbie","Karen","Ethan","Natali","Avi","Irit","Arthur"};
 	Item* head = (Item*)malloc(sizeof(Item));
 	Item* l = head;
 	l->string = "Avi";
