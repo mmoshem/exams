@@ -25,26 +25,57 @@ Item* createNode(char* str) {
 	return node;
 }
 
-void addToListFromArrLexi(Item** list, char* arr[], int size) {
+int ifexists(Item* list, char* str) {
+
+	while (list!= NULL) {
+		if (strcmp(list->string, str) == 0) {
+			return 1;
+		}
+		list = list->next;
+	}
+	return 0;
+	
+}
+
+
+void addToListFromArrLexi(Item **list, char* arr[], int size) {
 	int i;
 	for (i = 0; i < size; i++) {
-		Item* pos= *list;
-		if (strcmp(arr[i], (*list)->string) < 0) {
-			Item* temp = createNode(arr[i]);
-			temp->next = *list;
-			*list = temp;
+		Item* pos = (*list)->next;
+		Item* prev = *list;
+
+		if (ifexists(*list, arr[i])) {
+			continue;
 		}
-		if (strcmp(pos->string, arr[i]) == 0) {
-			pos = pos->next;
-		}
-		if (strcmp( arr[i], pos->string) > 0) {
-			Item* temp = createNode(arr[i]);
-			temp->next = pos->next;
-			pos->next = temp;
+		while (pos != NULL) {
+			
+			if (strcmp(arr[i],pos->string) > 0) {
+				prev = pos;
+				pos = pos->next;
+			}
+			else {
+
+				Item* temp = createNode(arr[i]);
+				if (prev == *list) {
+					temp->next = prev;
+					*list = temp;
+					
+				}
+				else {
+					temp->next = pos;
+					prev->next = temp;
+					
+				}
+			}
+			if (pos==NULL) {
+				Item* temp = createNode(arr[i]);
+				temp->next = pos;
+				prev->next = temp;
+				break;
+			}
+
 		}
 	}
-
-
 }
 
 int main() {
