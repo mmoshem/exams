@@ -1,2 +1,3 @@
-﻿  q2_20_b_a.c
+﻿  q3_22_b_b.c
+C:\Users\lolilolo\Desktop\vs hit\exams\Exams\Exams\q3_22_b_b.c(41,7): warning C4013: 'strcmp' undefined; assuming extern returning int
   Exams.vcxproj -> C:\Users\lolilolo\Desktop\vs hit\exams\Exams\x64\Debug\Exams.exe
