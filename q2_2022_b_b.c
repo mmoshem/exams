@@ -14,10 +14,10 @@ Pair* findAllfriendsofFriends(int* size, int** m, int sizeMat) {
 
     int i, j, k, count = 0;
     Pair* arr = (Pair*)malloc(sizeof(Pair) * ((N * N) / 2 - N));
-    for (i = 0; i < size; i++)
+    for (i = 0; i < sizeMat; i++)
         for (j = 0; j < i; j++)
             if (m[i][j] == 0)
-                for (k = 0; k < size; k++)
+                for (k = 0; k < sizeMat; k++)
                     if (m[i][k] == 1 && m[k][j] == 1)
                     {
                         arr[count].i = i;
