@@ -13,7 +13,7 @@ typedef struct Pair {
 Pair* findAllfriendsofFriends(int* size, int** m, int sizeMat) {
 
     int i, j, k, count = 0;
-    Pair* arr = (Pair*)malloc(sizeof(Pair) * ((N * N) / 2 - N));
+    Pair* arr = (Pair*)malloc(sizeof(Pair) * (sizeMat * sizeMat - sizeMat) / 2 );
     for (i = 0; i < sizeMat; i++)
         for (j = 0; j < i; j++)
             if (m[i][j] == 0)
