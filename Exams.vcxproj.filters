@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="q3_22_c_a.c">
+    <ClCompile Include="q1_22_c_b.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
