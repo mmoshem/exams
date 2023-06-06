@@ -12,7 +12,7 @@ typedef struct list {
 
 
 
-addToLast(List** last,int number) {
+void addToLast(List** last,int number) {
 	if (*last == NULL) {
 		*last = (List*)calloc(1, sizeof(List));
 		(*last)->data = number;
@@ -26,7 +26,7 @@ addToLast(List** last,int number) {
 
 List* createList(int* arr,int size) {
 	List* head = NULL;
-	addToLast(&head, 9);
+	addToLast(&head, arr[0]);
 	List* last = head;
 	for (int i = 1; i < size; i++) {
 		addToLast(&last, arr[i]);
@@ -74,9 +74,9 @@ void list_add_num(List** head, int num) {
 	List* temp = *head;
 	int Listnumber = numberinList(*head);
 	int newnumber = Listnumber + num;
-//	printf("before: %d\n", newnumber);
+	printf("before: %d\n", newnumber);
 	newnumber = invertnumber(newnumber);
-//	printf("after: %d", newnumber);
+	printf("after: %d", newnumber);
 	while (newnumber != 0) {
 		if (temp->next != NULL) {
 			temp->data = newnumber % 10;
@@ -86,7 +86,7 @@ void list_add_num(List** head, int num) {
 		else {
 			temp->data = newnumber % 10;
 			if(newnumber/10 !=0)
-			temp->next = (List*)calloc(1, sizeof(List));
+				temp->next = (List*)calloc(1, sizeof(List));
 
 			temp = temp->next;
 
@@ -101,11 +101,22 @@ void list_add_num(List** head, int num) {
 
 
 int main() {
-	int arr[] = { 9,9,9,0,0,0 };
+	int arr[] = { 9,9,9,4};
 
-	List* head = createList(arr, sizeof(arr) / sizeof(int));
-//	print(head);
-	list_add_num(&head, 5555555);
+	List* head = (List*)calloc(1, sizeof(List));
+	head->data = arr[0];
+	List* curr = head;
+	for(int i = 1; i < sizeof(arr) / sizeof(int); i++) {
+		curr->next= (List*)calloc(1, sizeof(List));
+		curr = curr->next;
+		curr->data = arr[i];
+	}
+
+
+	//List* head = createList(arr, sizeof(arr) / sizeof(int));
+	print(head);
+	list_add_num(&head, 118);
+	puts("");
 	print(head);
 
 }

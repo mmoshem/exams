@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="q2_form_example.c">
+    <ClCompile Include="q_1_form_example.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
