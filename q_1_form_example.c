@@ -47,6 +47,7 @@ print(List* head) {
 
 
 
+/// ////////////////////////////////////
 int numberinList(List* head) {
 	int num = 0; 
 	while (head != NULL) {
@@ -95,6 +96,8 @@ void list_add_num(List** head, int num) {
 	}
 
 }
+
+/// /////////////////////////////////////////////////
 
 
 int main() {
