@@ -101,7 +101,7 @@ void list_add_num(List** head, int num) {
 
 
 int main() {
-	int arr[] = { 9,9,9,4 };
+	int arr[] = { 9,9,9,0,0,0 };
 
 	List* head = createList(arr, sizeof(arr) / sizeof(int));
 //	print(head);
