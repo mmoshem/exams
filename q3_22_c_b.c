@@ -1,47 +1,47 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 
-
-char* inverseString(char* str) {
+char* inverseString(char* str)
+{
+	char* primary;
+	char* secondary;
+	char* res;
 	int len = strlen(str);
-	int i = len - 1, j = 0, counter=1;
-	char* temp = (char*)calloc(len, sizeof(char));
-	if (!temp)return NULL;
-	//strcpy(temp, str);
-//	abc def'\0'
-//  0123456 7
-//      i
-	while (i >= 0) {
-		while (str[i] != ' ' && i > 0) {
-			counter++;
-			i--;
+
+	res = (char*)calloc(len + 1, sizeof(char));
+
+	secondary = primary = &str[len];   
+	while (secondary != str)
+	{
+		while (*secondary != ' ' && secondary != str)
+		{
+			secondary--;
 		}
-		if (i == 0) {
-			
-			memcpy(temp + j, str + i, counter);
-			//memcpy_s(temp + j, counter, str + i, counter);
-			temp[len] = '\0';
-		}
-		else {
-			memcpy_s(temp + j, counter, str + i + 1, counter);
-			j += counter;
-		}
-		counter = 1;
-		while (str[--i] == ' ') {
-			i--;
-		}
+
+		if (secondary == str)//זה בשביל אם אני הגעתי להתחלה ואין כבר רווח אז אני צריך להוסיף רווח ישנית לשורה של התשובה
+			strcat(res, " ");
+
+		if (primary == &str[len])//חד פעמי נכנס לתנאי זה רק בפעם הראשונה כי אני לא רוצה לקחת את הרווח הקיים בתוך סקונדרי ולכן אני מכניס לרזולט עם תו אחד קדימה(כתובת) מסטרינג בלי הרווח 
+			strcat(res, secondary + 1);
+		else
+			strcat(res, secondary);//לפה זה יכנס כל שאר הפעמיים מהפעם השנייה ועד הסוף
+		primary = secondary;
+		*primary = '\0';
 
 	}
-	return temp; 
+	strcpy(str, res);
+	free(res);
+	res = NULL;
+	return str;
 }
 
 
 int main() {
 
-	char str[] = "abc def";
+	char str[] = "ab cd ef gh";
 	char *str1 = inverseString(str);
 	printf("%s", str1);
 	return 0;
