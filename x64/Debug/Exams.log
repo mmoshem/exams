@@ -1,2 +1,4 @@
-﻿  q2_17_b_a.c
+﻿  q3_17_b_a.c
+C:\Users\lolilolo\Desktop\vs hit\exams\Exams\Exams\q3_17_b_a.c(9,24): warning C4098: 'strTtoFile_startingLetter': 'void' function returning a value
+C:\Users\lolilolo\Desktop\vs hit\exams\Exams\Exams\q3_17_b_a.c(6,7): warning C4101: 'c': unreferenced local variable
   Exams.vcxproj -> C:\Users\lolilolo\Desktop\vs hit\exams\Exams\x64\Debug\Exams.exe
