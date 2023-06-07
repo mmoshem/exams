@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="isPerfectFromMatToArr.c">
+    <ClCompile Include="q1_19_b_a.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
