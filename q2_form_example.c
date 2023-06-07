@@ -41,9 +41,10 @@ Apartment* appropriateAppartment(char* fileName,int roomNum,int price,int *count
 	
 	while (i>0&&fread(&arr, sizeof(Apartment), 1, fp) == 1) {
 		if(arr.rooms == roomNum && arr.price <= price){
-			strcpy(arrDin[i - 1].address , arr.address);
+			arrDin[i - 1] = arr;
+			/*strcpy(arrDin[i - 1].address , arr.address);
 			arrDin[i - 1].price = arr.price;
-			arrDin[i - 1].rooms = arr.rooms;
+			arrDin[i - 1].rooms = arr.rooms;*/
 			i--;	
 		}
 	}
