@@ -9,7 +9,7 @@ void strTtoFile_startingLetter(char* str, char letter, char* fileName) {
 	if (!fp) { return NULL; }
 
 	char bigLetter = letter - 'a' + 'A';
-	if (str[1] == bigLetter || str[i] == letter) {
+	if (str[i] == bigLetter || str[i] == letter) {
 		while (str[i]!=' '&&str[i]!='\0') {
 			fputc(str[i], fp);
 			i++;

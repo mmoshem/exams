@@ -27,6 +27,7 @@ Item** function(int mat[][COLS], int n,int m,int** size) {
 		dinmat[i] = (Item*)calloc(k, sizeof(Item));
 		
 	}
+	
 	for (i = 0; i < n; i++) {
 		times = 1;
 		for (j = 1,k=0; j <= m; j++) {
